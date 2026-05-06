@@ -18,7 +18,6 @@ Built as part of the **TEYZIX CORE Internship Program**, Task ID: **FE-1**, Doma
 
 | | |
 |---|---|
-| 🌐 **Live Demo** | [your-deployed-link-here.vercel.app](https://teyzix-analytics-dashboard.vercel.app/) |
 | 💻 **GitHub Repo** | [github.com/yourusername/TEYZIX-Task-5-Analytics-Dashboard](https://github.com/AqSa-55dev/TEYZIX-Analytics-Dashboard.git) |
 
 
