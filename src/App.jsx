@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 import { Navbar }         from './components/ui/Navbar';
 import { KpiCard }        from './components/ui/KpiCard';
 import { KpiSkeleton, ChartSkeleton } from './components/ui/Skeleton';
-import { RevenueLineChart } from './components/charts/RevenueLineChart';
-import { FeatureBarChart  } from './components/charts/FeatureBarChart';
+// AFTER — loads charts only when needed
+import { lazy, Suspense } from 'react'
+
+const RevenueChart = lazy(() => import('./components/RevenueChart'))
+const FeatureChart = lazy(() => import('./components/FeatureChart'))
 import { UserPieChart     } from './components/charts/UserPieChart';
 import { useDashboardData } from './hooks/useDashboardData';
 
@@ -60,9 +63,15 @@ export default function App() {
           ) : data ? (
             <>
               <div className="xl:col-span-2">
-                <RevenueLineChart data={data.revenueTrend} />
+              
+              <Suspense fallback={<div>Loading...</div>}>
+                <RevenueChart />
+              </Suspense>
               </div>
-              <FeatureBarChart data={data.featureUsage} />
+              
+              <Suspense fallback={<div>Loading...</div>}>
+                <FeatureChart/>
+              </Suspense>
               <UserPieChart    data={data.userSegments}  />
             </>
           ) : null}
