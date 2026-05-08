@@ -192,7 +192,7 @@ npm run preview
 
 ![Lighthouse Score](./public/lighthouse.png)
 
-> ⚠️ Replace with your actual Lighthouse screenshot before submitting.
+
 
 **How to get your Lighthouse score:**
 1. Open the live deployed link in Chrome
